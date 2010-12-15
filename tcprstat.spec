@@ -1,5 +1,7 @@
 # TODO
 # - fix bashism in configure.ac, and add --disable-static option
+# - fix non-x86_64 build:
+#   stats-hash.c:297:2: error: #error Cannot determine sizeof(unsigned long)
 Summary:	Passive TCP response time analysis tool — Read more
 Name:		tcprstat
 Version:	0.3.1
