@@ -11,7 +11,10 @@ Group:		Applications/Networking
 Source0:	https://github.com/downloads/Lowercases/tcprstat/%{name}-%{version}.tar.gz
 # Source0-md5:	392ffc7a4bd676567728aee0b479c552
 URL:		http://www.percona.com/docs/wiki/tcprstat:start
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	libpcap-devel >= 1.0.0
+BuildRequires:	libtool
 BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
