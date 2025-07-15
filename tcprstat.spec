@@ -24,7 +24,7 @@ requests' response time in a server
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 # the libpcap detect is broken (wants static pcap)
 %{__sed} -i -e 's/buildpcap == xyes/buildpcap = xno/' configure.ac
