@@ -3,7 +3,7 @@
 Summary:	Passive TCP response time analysis tool — Read more
 Name:		tcprstat
 Version:	0.3.1
-Release:	1
+Release:	2
 License:	GPL v2 or v3
 Group:		Applications/Networking
 Source0:	https://github.com/downloads/Lowercases/tcprstat/%{name}-%{version}.tar.gz
