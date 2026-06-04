@@ -3,13 +3,14 @@
 Summary:	Passive TCP response time analysis tool — Read more
 Name:		tcprstat
 Version:	0.3.1
-Release:	2
+Release:	3
 License:	GPL v2 or v3
 Group:		Applications/Networking
 Source0:	https://github.com/downloads/Lowercases/tcprstat/%{name}-%{version}.tar.gz
 # Source0-md5:	392ffc7a4bd676567728aee0b479c552
 Patch0:		https://github.com/Lowercases/tcprstat/commit/48e3b7923ffec28e584c0220c4e5bfa4be7fca79.patch
 # Patch0-md5:	02f14c2c919c5e0b7681194ad815fc30
+Patch1:		x32.patch
 URL:		http://www.percona.com/docs/wiki/tcprstat:start
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -25,6 +26,7 @@ requests' response time in a server
 %prep
 %setup -q
 %patch -P0 -p1
+%patch -P1 -p1
 
 # the libpcap detect is broken (wants static pcap)
 %{__sed} -i -e 's/buildpcap == xyes/buildpcap = xno/' configure.ac

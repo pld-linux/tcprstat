@@ -1,0 +1,14 @@
+--- tcprstat-0.3.1/src/output.c~	2010-08-12 05:10:28.000000000 +0200
++++ tcprstat-0.3.1/src/output.c	2026-06-04 09:26:25.761562041 +0200
+@@ -184,7 +184,11 @@
+             else if (c[0] == 'I')
+                 printf("%lu", iterations);
+             else if (c[0] == 't' || c[0] == 'T')
++#if defined(__x86_64__) && defined(__ILP32__)
++                printf("%llu", current - (c[0] == 't' ? timestamp : 0));
++#else
+                 printf("%lu", current - (c[0] == 't' ? timestamp : 0));
++#endif
+             
+             // Actual %
+             else if (c[0] == '%')
